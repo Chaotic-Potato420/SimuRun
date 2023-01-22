@@ -1,0 +1,10 @@
+localStorage.getItem('avatar') = the user's avatar
+localStorage.getItem('stateChoice') = the user's state 
+localStorage.getItem('partyChoice') = the user's party
+localStorage.getItem('opponentParty') = the opponent's party
+localStorage.getItem('userName') = the user's name
+localStorage.getItem('stanceOne') = the user's stance on topic one
+localStorage.getItem('stanceTwo') = the user's stance on topic two
+localStorage.getItem('stanceThree') = the user's stance on topic three
+localStorage.getItem('vp') = the user's vice president choice
+localStorage.getItem('usersVotes') = the user's vote count

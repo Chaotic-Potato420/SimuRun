@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="global.css" />
+    <link rel="stylesheet" href="adMaker.css">
+</head>
+<body>
+    <div id="tutorialPopup">
+      <div class="content">
+        <p id="tootMessage">
+          Congratulations! You've completed your first debate! Now to create an advertisement for magazines,
+          newspapers, and newsletters! Let's start with some brief questions!
+        </p>
+        <br>
+        <button onclick="startGame()">Continue</button>
+      </div>
+    </div>
+    <div id="forOrAgainst">
+        <h1 style="color: white;">Will your ad be for yourself or agianst your opponent?</h1>
+        <input type="button" value="For myself" onclick="setTarget(1)">
+        <input type="button" value="Against my opponent" onclick="setTarget(2)">
+    </div>
+    <div id="message">
+        <h1 style="color: white;">Set the message your ad will contain!</h1>
+        <textarea type="text" id="usersMessage" maxlength="330"></textarea>
+        <br><br>
+        <input type="button" value="Submit" id="submitter" onclick="setMessage()">
+    </div>
+    <div id="loader"></div>
+    <h2 id="loaderLabel">Compiling Advertisement...</h2>
+
+    <div style="display:none;" id="completeAd" class="animate-bottom">
+        <img src="assets/1.jpg" alt="" id="targetPerson">
+        <h2 id="targetPersonName">A message from Person's Name</h2>
+        <p id="creatorsMessage">
+            a lot of information that the user entered
+        </p>
+        <h3 id="endorsementMessage">
+            Endorsed by
+        </h3>
+    </div>
+    <h1 id="continue" onclick="endGame()">→</h1>
+    <script src="adMaker.js"></script>
+</body>
+</html>

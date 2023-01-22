@@ -1,0 +1,63 @@
+@import url('https://fonts.googleapis.com/css2?family=Sofia+Sans:wght@200&display=swap');
+*{
+    font-family: 'Sofia Sans', sans-serif;
+    text-align: center;
+    color: black;
+    padding: none;
+    margin: none;
+    overflow-y: hidden;
+    overflow-x: hidden;
+}
+:root{
+    --red: #E54B4B;
+    --blue: #3C91E6;
+    --purple: #231942;
+    --clearRed: #2319429e;
+}
+#tutorialPopup{
+  z-index: 10;
+  background-color: var(--clearRed);
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  padding: none;
+  margin: -1%;
+}
+.content{
+  font-size: 1.5em;
+  width: 50%;
+  border: 2px solid black;
+  border-radius: 30px;
+  background-color: white;
+  padding: 2%;
+  font-weight: 800;
+  position: absolute;
+  top: 18%;
+  left: 22%;
+}
+.content button,#questions input{
+  font-size: 1em;
+  font-weight: 800;
+  border: 0.5px solid black;
+  border-radius: 30px;
+  padding: 2%;
+  background-color: var(--purple);
+  color: white;
+}
+.avatars{
+    position: relative;
+    border-radius: 30px;
+    background-color: var(--blue);
+    margin-left: 35%;
+    padding: 2%;
+    width: 25vw;
+}
+.next {
+    position: absolute;
+    right: 30%;
+    top: 50%;
+    font-size: xx-large;
+}
+#currentAvatar{
+    width: 200px;
+}

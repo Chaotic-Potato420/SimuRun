@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="global.css" />
+</head>
+<style>
+    .content{
+        width: 80%;
+        margin-top: -5.5%;
+        margin-left: -15%;
+    }
+    .content button{
+        margin-top: -5%;
+    }
+    #debateCenter{
+        position: absolute;
+        top: 0%;
+        left: 0%;
+    }
+    #characters{
+        width: 100vw;
+        padding-top: 1%;
+        padding-bottom: 1%;
+        border-bottom: 3px solid black;
+    }
+    #characters div{
+        margin-left: 5%;
+        background-color: var(--clearRed);
+        border-radius: 30px;
+        width: 15%;
+    }
+    #opponent{
+        position: absolute;
+        top: 2%;
+        right: 5%;
+        background-color: var(--clearRed);
+        border-radius: 30px;
+        width: 15%;
+    }
+    #userAvatar, #opponentAvatar{
+        width: 80px;
+        padding-top: 0.5%;
+    }
+    label{
+        font-weight: 800;
+        font-size: 1.25em;
+        color: white;
+        padding-bottom: 1%;
+        padding-top: 1%;
+    }
+    #userBubble{
+        height: 100px;
+        width: 350px;
+        font-size: 1.2em;
+        font-weight: 800;
+        background-color: white;
+        border: 5px solid black;
+        position: absolute;
+        top: -3%;
+        left: 22%;
+    }
+    #opponentBubble{
+        height: 100px;
+        width: 350px;
+        font-size: 1.2em;
+        font-weight: 800;
+        background-color: white;
+        border: 5px solid black;
+        position: absolute;
+        top: -3%;
+        right: 22%;
+    }
+    #questions{
+        margin-top: 1%;
+    }
+    #votes{
+        margin-top: 3%;
+        border-top: 3px solid black;
+        padding-bottom: 3%;
+    }
+</style>
+<body>
+    <div id="tutorialPopup">
+      <div class="content">
+        <p id="tootWords">
+          Congratulations!! You've made it to your first debate here's how it works. You'll be asked a 
+          question pertaining to one of the three topics presented earlier. You must choose an answer that
+          aligns with your selected party. If you answer correctly, you'll get 3 votes, but if you don't,
+          you don't get any votes! You need at least 10 votes to win, you can track your votes at the bottom of the screen!
+        </p>
+        <br>
+        <button onclick="startGame()">Continue</button>
+      </div>
+    </div>
+    <div id="debateCenter">
+        <div id="characters">
+            <div>
+                <label for="userAvatar" id="user"></label>
+                <br>
+                <img src="" alt="" id="userAvatar">
+            </div>
+            <p id="userBubble">
+                Da words being da words
+            </p>
+            <p id="opponentBubble">
+                Da words being da words
+            </p>
+            <div id="opponent">
+                <label for="opponentAvatar">Tim Joe</label>
+                <br>
+                <img src="assets/opponent.png" alt="" id="opponentAvatar">
+            </div>
+        </div>
+        <div id="questions">
+            <h1 id="Question">If you support abortion, why? If you do not, why not?</h1>
+            <input type="button" id="demoAns" value="It's neccesary" onclick="answerQ(1)">
+            <input type="button" id="repAns" value="It's cruel" onclick="answerQ(2)">
+        </div>
+        <div id="votes">
+            <h3 id="voteNum">Votes: 00</h3>
+        </div>
+    </div>
+    <script src="debateOne.js"></script>
+</body>
+</html>

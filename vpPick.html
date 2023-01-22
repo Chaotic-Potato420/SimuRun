@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="global.css" />
+</head>
+<style>
+    .content{
+        padding: 3%;
+    }
+    .content p{
+        display: inline;
+    }
+    .content button{
+        margin-top: 3%;
+    }
+    ul{
+        list-style-type: none;
+        font-size: 1.5em;
+        font-weight: 800;
+        line-height: 1.5;
+        position: absolute;
+        top: 10%;
+        right: 10%;
+    }
+    .avatars{
+        width:auto;
+        margin-left: 20%;
+        margin-right: 20%;
+    }
+    .avatars img{
+        position: relative;
+        right: 25%;
+    }
+    .next{
+        right: 10%;
+    }
+</style>
+<body>
+    <div id="tutorialPopup">
+      <div class="content">
+        <p>
+          Wonderful!! I'm looking forward to working with you <p id="name"></p> ! Let's get started with
+          your campaign! First things first, we'll need a vice president to run with.
+        </p>
+        <br>
+        <button onclick="startGame()">Continue</button>
+      </div>
+    </div>
+    <div class="avatarsContainer" id="avatarsContainer">
+      <h1>Choose your VP!</h1>
+      <div class="avatars" id="maleAvatar">
+        <img id="currentAvatar" class="img" onclick="setVp()" src="assets/femaleVp2.png" />
+        <ul>
+          <li id="vpName">Name: Tilly Smart</li>
+          <li id="vpAge">Age: 38</li>
+          <li id="vpParty">Party: Republican</li>
+          <li id="vpState">State: Florida</li>
+        </ul>
+      </div>
+      <a class="next" onclick="next()">❯</a>
+    </div>
+</body>
+<script>
+    const avatarsURLS = ['assets/nonbinaryVp.png','assets/femaleVp1.png','assets/maleVp.png','assets/femaleVp2.png'];
+    const names = ['Riley Maitland', "Ruth Richter", 'Todd Scott', 'Tilly Smart'];
+    const ages = ['36', '68', '45', '38'];
+    const party = ['Republican', 'Democrat', 'Democrat','Republican'];
+    const states = ['Nebraska', 'Oregon', 'Texas', 'Michigan'];
+    var nextAvatar = 0;
+    
+    var userName = localStorage.getItem('userName').toString();
+    document.getElementById('name').innerHTML = userName.toUpperCase();
+
+    if(localStorage.getItem('partyChoice') == 'd'){
+        document.getElementById("name").style.color = "var(--blue)";
+    }else if(localStorage.getItem('partyChoice') == 'r'){
+        document.getElementById('name').style.color = "var(--red)";
+    }
+
+    function startGame(){
+        document.getElementById("tutorialPopup").style.display = "none";
+    }
+
+    function next(){
+        console.log(nextAvatar);
+        document.getElementById('currentAvatar').src = avatarsURLS[nextAvatar];
+        document.getElementById('vpName').innerHTML = "Name: " + names[nextAvatar];
+        document.getElementById('vpAge').innerHTML = "Age: " + ages[nextAvatar];
+        document.getElementById('vpParty').innerHTML = "Party: " + party[nextAvatar];
+        document.getElementById('vpState').innerHTML = "State: " + states[nextAvatar];
+        nextAvatar += 1;
+        if(nextAvatar == 4){
+            nextAvatar = 0;
+        }
+    }
+    function setVp(){
+        console.log("vice president selection saved");
+        if(avatarsURLS[nextAvatar - 1] == undefined){
+            localStorage.setItem('vp', 'assets/femaleVp2.png')
+            window.location.replace('debateOne.html');
+        }else{
+            localStorage.setItem('vp', avatarsURLS[nextAvatar - 1])
+            window.location.replace('debateOne.html');
+        }
+    }
+</script>
+</html>

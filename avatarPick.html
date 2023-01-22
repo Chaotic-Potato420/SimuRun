@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="global.css" />
+</head>
+<style>
+    #userName{
+        width: 50%;
+        padding: 10%;
+        margin-top: 5%;
+        margin-left: 15%;
+        border: 2px solid black;
+        border-radius: 30px;
+        background-color: var(--red);
+    }
+    #userName input{
+        border: 1px solid black;
+        font-weight: 800;
+        font-size: 1em;
+    }
+
+    #topics input{
+        height: 100px;
+        padding: 2%;
+        font-weight: 800;
+        font-size: 1em;
+        border: 2px solid black;
+        border-radius: 30px;
+        background-color: var(--purple);
+        color: white;
+    }
+</style>
+<body>
+    <div class="avatarsContainer" id="avatarsContainer">
+      <h1>Choose your avatar!</h1>
+      <div class="avatars fade" id="maleAvatar">
+        <img id="currentAvatar" class="img" onclick="setAvatar()" src="" />
+      </div>
+
+      <a class="next" onclick="next()">❯</a>
+    </div>
+    <div id="userName">
+        <h2>One more thing! What is your name?</h2>
+        <input type="text" id="nameInput">
+        <input type="button" onclick="setUserName()" value="Enter">
+    </div>
+    <div id="tutorialPopup">
+      <div class="content">
+        <p>
+          Now that we know a bit more about you, what are your stances on these important topics?
+        </p>
+        <button onclick="startGame()">Continue</button>
+      </div>
+    </div>
+    <div id="topics">
+        <h2 id="topicQuestion" style="margin-top: 10%">Do you support abortion?</h2>
+        <input id="demoAns" type="button" value="I do support abortion" onclick="setStance(1)">
+        <input id="repAns" type="button" value="I do not support abortion" onclick="setStance(2)">
+    </div>
+    <script src="avatarPick.js" defer></script>
+</body>
+</html>
